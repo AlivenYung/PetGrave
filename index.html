@@ -1,114 +1,171 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>進場動畫</title>
-	<style>
-		#bg{
-			width: 100%;
-			height: 100%;
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			background: #453e3e;
-		}
-		#bg > img{
-			position: absolute;
-			width: 60px;
-			height: 60px;
-			right: calc(50% - 30px);
-			top: calc(50% - 30px);
-			animation:move 1s 0s infinite;
-			-webkit-animation:move 1s 0s infinite;
-			transform-origin:bottom;
-			-webkit-transform-origin:bottom;
-		}
-	@keyframes move
-{
-    0%, 65%{ 
-      -webkit-transform:rotate(0deg);
-      transform:rotate(0deg);
-    }
-    70% {  
-      -webkit-transform:rotate(6deg);
-      transform:rotate(6deg);
-    }
-    75% {  
-      -webkit-transform:rotate(-6deg);
-      transform:rotate(-6deg);
-    }
-    80% {  
-      -webkit-transform:rotate(6deg);
-      transform:rotate(6deg);
-    }
-    85% {  
-      -webkit-transform:rotate(-6deg);
-      transform:rotate(-6deg);
-    }
-    90% {  
-      -webkit-transform:rotate(6deg);
-      transform:rotate(6deg);
-    }
-    95% {  
-      -webkit-transform:rotate(-6deg);
-      transform:rotate(-6deg);
-    }
-    100% {  
-      -webkit-transform:rotate(0deg);
-      transform:rotate(0deg);
-    }
-}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>PetGrave</title>
 
-@-webkit-keyframes move
-{
-    0%, 65%{ 
-      -webkit-transform:rotate(0deg);
-      transform:rotate(0deg);
-    }
-    70% {  
-      -webkit-transform:rotate(6deg);
-      transform:rotate(6deg);
-    }
-    75% {  
-      -webkit-transform:rotate(-6deg);
-      transform:rotate(-6deg);
-    }
-    80% {  
-      -webkit-transform:rotate(6deg);
-      transform:rotate(6deg);
-    }
-    85% {  
-      -webkit-transform:rotate(-6deg);
-      transform:rotate(-6deg);
-    }
-    90% {  
-      -webkit-transform:rotate(6deg);
-      transform:rotate(6deg);
-    }
-    95% {  
-      -webkit-transform:rotate(-6deg);
-      transform:rotate(-6deg);
-    }
-    100% {  
-      -webkit-transform:rotate(0deg);
-      transform:rotate(0deg);
-    }
-}
-	</style>
+	<link rel=stylesheet type="text/css" href="css/default.css">
+	<link rel=stylesheet type="text/css" href="css/load.css">
 </head>
 <body>
-	<div id="bg">
-		<img src="logo2.png"/>
+
+	<div id="loadBg">
+		<div id="buger" onclick="openmenu()">
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</div>
+		<div id="closeBuger" onclick="closemenu()"></div>
+		
+		<img src="img/logo2.png"/>
+		<div id="menu">
+			<center>
+				<p><a class="indexlink">首頁</a></p>
+				<p><a class="aboutlink">關於我們</a></p>
+				<p><a class="processlink">殯葬流程</a></p>
+				<p><a class="stylelink">葬送風格</a></p>
+				<p><a class="babylink">給寶貝的話</a></p>
+			</center>
+		</div>
 	</div>
-	<script src="jquery-2.1.1.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$("#bg > img").delay(500).animate({right:"5px"},2000);
-			$("#bg").delay(2500).animate({width:"70px"},1000);
-			$("#bg > img").delay(1000).queue(function (next) { 
-				$(this).css({"animation-play-state":"paused"});
-				next();
-			});
-		});
-	</script>
+
+
+	<div id="body">
+		<div id="index">
+			<div id="bgImg">
+				<img src="img/banner1.png">
+				<img src="img/banner2.png">
+				<img src="img/banner3.png">
+			</div>
+			<img src="img/down.png" class="aboutlink">
+		</div>
+		<div id="about">
+			<div style="width: 70%">
+				<h1>關於我們</h1>	
+				<div>
+					<h2>理念</h2>
+					<p>
+						服務用心與貼心是本公司一向堅持的核心價值，以100%客戶滿意為基本服務原則，專業、誠信、慈悲，更是本公司的核心理念。
+					</p>
+				</div>
+				<div>
+					<h2>歷史</h2>
+					<p>
+						在過去的時代，人們不是那麼重視寵物，但自從一次的意外後發現愛寵捨命救主人，並令人深省，事發後，人們越來越重視動物，以前動物往生，頂多只是簡單的做個土葬，並不會做什麼特別的儀式，但畢竟牠們也是一個生命，我們必須要把牠看成家中的一份子，也讓牠在離開這世界時也能安心且有尊嚴的離開，所以才會創立本公司，幫助及陪伴飼主們對自己的愛寵做最後的道別。
+					</p>
+				</div>
+				
+			</div>
+			<div id="contactus">
+				<div><img src="img/about01.png"/></div>
+				<div><img src="img/about02.png"/></div>
+				<div><img src="img/logo2.png"/></div>
+			</div>
+
+				
+
+		</div>
+		<div id="process">
+			<h1>殯葬流程</h1>	
+			<img src="img/process.png" />
+		</div>
+		<div id="style">
+			<div class="0">
+				<div style="background-image: url('img/style03.jpg')"></div>
+				<a>台灣</a>
+			</div>
+			<div class="1">
+				<div style="background-image: url('img/style02.jpg')"></div>
+				<a>日本</a>
+			</div>
+			<div class="2">
+				<div style="background-image: url('img/style01.jpg')"></div>
+				<a>西洋</a>
+			</div>
+		</div>
+		<div id="st">
+			<h3></h3>
+			<div class="contact">
+				<div>
+					<div></div>
+					<p></p>
+				</div>
+				<div>
+					<div></div>
+					<p></p>
+				</div>
+				<div>
+					<div></div>
+					<p></p>
+				</div>
+			</div>
+			<center>
+				<a>購買方案</a>
+			</center>
+			<p>如果需要客製化，請聯絡我們</p>
+		</div>
+		<div id="baby">
+			<h1>給寶貝的話</h1>
+			<div class="contact">
+				<div>
+					<div class="flipper" >
+						<div class="front">
+							<img src="img/baby01.png"/>
+							<p>短頸路</p>
+						</div>
+						<div class="back">
+							Dear 短頸鹿<br><br>
+							你在天上還好嗎，家人都很想念呦!
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="flipper" >
+						<div class="front">
+							<img src="img/baby02.png"/>
+							<p>河海馬</p>
+						</div>
+						<div class="back">
+							Dear何海馬<br><br>
+							有沒有乖乖吃飯啊，要想麻麻ㄛ!
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="flipper" >
+						<div class="front">
+							<img src="img/baby03.png"/>
+							<p>敖小鬆</p>
+						</div>
+						<div class="back">
+							Dear敖小鬆<br><br>
+							五年了還是無法忘記你爬在我身上一起逛街的日子
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="flipper" >
+						<div class="front">
+							<img src="img/baby04.png"/>
+							<p>敖小刺</p>
+						</div>
+						<div class="back">
+							Dear敖小刺<br><br>
+							在火葬那天被妳針刺到手到現在我都還不忍心拔掉，真的想你了
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>Copyright&copy; 2018 PetGrave. All rights reserved</p>
+			<span><img src="img/down.png" class="indexlink"></span>
+			<div>
+				<img src="img/footer.png">
+			</div>
+		</footer>
+	</div>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/default.js"></script>
 </body>
 </html>
