@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 	font-family: "微軟正黑體";
 }
-html,body,#body,#index,#about{
+html,body,#body,#index{
 	height: 100%;
 }
 body{
@@ -107,12 +107,30 @@ body{
     cursor: pointer;
 }
 #index{
-	background-image: url("../img/logobg.png");
-	background-position: center center;
-	background-size: 800px 800px;
+	background-image: url("../img/bg.jpg");
+	background-position: left bottom;
+	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
 	z-index: 1;
+}
+#index div{
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+	position: absolute;
+	font-weight: 700;
+	letter-spacing: 7px;
+	text-shadow: -3px 5px 5px #8a8282;
+}
+#index div:nth-child(1){
+	font-size: 32px;
+	right: 20%;
+	top: 10%;
+}
+#index div:nth-child(2){
+	right: 25%;
+	top: 50%;	
+	font-size: 32px;
 }
 #index > img{
 	position: absolute;
@@ -123,14 +141,7 @@ body{
 	animation: td .5s infinite;
 	cursor: pointer;
 }
-#bgImg img{
-	float: left;
-	width: 22%;
-}
-#bgImg img:nth-child(2){
-	margin-left: 17%;
-	margin-right: 17%;
-}
+
 
 @keyframes td {
     0% {
@@ -145,23 +156,36 @@ body{
 }
 #about {
 	padding-top: 50px;
-	background-image: url("../img/aboutImg.jpg");
-	background-repeat: no-repeat;
-	background-size: 234px 100%;
-	background-position: right;
 	padding-left: 20px;
 	position: relative;
 }
-h1 {
-	color: white;
-	font-size: 22px;
-	background-image: url(../img/h1Bg.jpg);
-	background-position: right;
-	width: 200px;
-	padding: 10px;
+#about .left{
+	height: 500px;
+	margin: 50px;
 }
-#about div{
-
+#about .right{
+	background-image: url("../img/aboutImg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 500px;
+	background-position: center center;
+	margin: 50px;
+}
+h1 {
+	color: #453e3e;
+	font-size: 24px;
+	padding:20px 10px;
+	border-bottom:1px solid #f5f5f5;
+	position: relative;
+}
+h1:before{
+	content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 20px;
+    height: 2px;
+    background-color: #453e3e;
 }
 #about h2 {
 	color: #8a8282;
@@ -188,24 +212,52 @@ h1 {
 	justify-content: center;
 }
 #contactus{
-	width: calc(100% - 274px);
+	width: calc(50% + 10px);
 	background-color: #453e3e;
-	position: absolute;
-	bottom: 0px;
-	height: 340px;
+	height: 200px;
+	position: relative;
+	left: -20px;
 }
 #contactus div{
 	display: inline-block;
-	width: 30%;
-	margin-right: 3%;
 	vertical-align:top;
+	margin-right: calc((100% - 374px) / 2);
 }
 #contactus > div:nth-child(1) > img{
-	height: 360px;
+	height: 200px;
 }
-#contactus > div:nth-child(2) > img, #contactus > div:nth-child(3) > img{
-	margin-top:55px;
-	height: 250px;
+#contactus > div:nth-child(2){
+	padding-top: 50px;
+}
+#contactus > div:nth-child(2) > img{
+	height: 100px;
+	display: block;
+	margin: auto;
+}
+#contactus > div:nth-child(3){
+	width: 100%;
+	background: white;
+	margin-left: 100%;
+	position: relative;
+	top: -200px;
+	padding: 30px 60px;
+	transition: all .5s ease-in-out;
+	box-shadow: 0px 0px 0px gray;
+}
+#contactus > div:nth-child(3):hover{
+	box-shadow: 0px 3px 3px gray;
+}
+#contactus > div:nth-child(3) h3{
+	font-size: 28px;
+	line-height: 40px;
+	color: #222;
+
+}
+#contactus > div:nth-child(3) span{
+	display: block;
+	color: #8a8282;
+	font-size: 14px;
+	margin-top: 10px;
 }
 #process{
 	padding-top: 50px;
@@ -307,7 +359,11 @@ h1 {
 #baby{
 	padding-top: 50px;
 	padding-left: 20px;
-	height: 400px;
+	height: 500px;
+	padding-bottom: 50px;
+	background-image: url("../img/babybg.png");
+	background-position: bottom right;
+	background-repeat: no-repeat;
 }
 #baby .contact{
 	margin-top: 50px;
@@ -368,7 +424,6 @@ h1 {
 	font-size: 14px;
 }
 footer{
-	margin-top: 50px;
 	background: #453e3e;
 	color: white;
 	height: 50px;
