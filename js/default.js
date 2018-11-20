@@ -10,8 +10,8 @@ function closemenu(){
 	$("#loadBg > #menu").hide();	
 	$("#loadBg > #buger").show();
 	$("#loadBg > #closeBuger").hide();
-	$("#loadBg > img").css({"width":"50px","height":"50px","top":"48%","right":"10px"});
-	$("#loadBg").css({"width":"70px"});
+	$("#loadBg > img").css({"width":"50px","height":"50px","top":"48%","right":"20px"});
+	$("#loadBg").css({"width":"90px"});
 }
 function goToByScroll(id){
     id = id.replace("link", "");
